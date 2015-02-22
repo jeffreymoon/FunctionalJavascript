@@ -2,8 +2,8 @@ var _ = require("underscore");
 var rand = partial1(_.random, 1);
 var composedRandomString = partial1(generateString, generateRandomCharacter);
 
-console.log("generateString(generateRandomCharacter, 20) => ", generateString(generateRandomCharacter, 20));
-console.log("composedRandomString(10) => ", composedRandomString(10));
+console.log(generateString(generateRandomCharacter, 20));
+console.log(composedRandomString(10));
 
 function generateRandomCharacter() {
 	return rand(26).toString(36);

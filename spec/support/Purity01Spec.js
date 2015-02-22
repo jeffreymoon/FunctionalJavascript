@@ -19,6 +19,7 @@ function areaOfACircle(radius) {
 }
 
 
+/****************************************************************/
 function validator(message, fun) {
 	var f = function(/* args */) {
 		return fun.apply(fun, arguments);

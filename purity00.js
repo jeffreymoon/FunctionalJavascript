@@ -1,9 +1,9 @@
 var _ = require("underscore");
 
 var rand = partial1(_.random, 1);
-console.log("rand(10) => ", rand(10));
-console.log("repeatedly(10, partial1(rand, 10)) => ",repeatedly(10, partial1(rand, 10)));
-console.log("_.take(repeatedly(100, partial1(rand. 10)), 5) => ", _.take(repeatedly(100, partial1(rand, 10)), 5));
+console.log(rand(10));
+console.log(repeatedly(10, partial1(rand, 10)));
+console.log(_.take(repeatedly(100, partial1(rand, 10)), 5));
 console.log(randString(0));
 console.log(randString(1));
 console.log(randString(10));
@@ -20,7 +20,7 @@ function partial1(fun, arg1) {
 	return function(/* args */) {
 		var args = construct(arg1, arguments);
 		return fun.apply(fun, args);
-	}
+	};
 }
 
 function construct(head, tail) {
