@@ -1,4 +1,4 @@
-// Policies for changes
+// Policies for controlling changes
 var _ = require("underscore");
 var zero = validator("cannot be zero", function(n) { return 0 === n });
 var greaterThan = curry2(function (lhs, rhs) { return lhs > rhs });
@@ -12,10 +12,10 @@ var sqrPost = condition1(
 	validator("result should be positive", greaterThan(0)));
 var megaCheckedSqr = _.compose(partial(sqrPost, _.identity), checkedSqr);
 
-//var container = contain({name: "Lemonjon"});
 
-// contatiner#set을 이용하는 방법
-//container.set({name: "Lemongrab"});
+// contatiner를 이용하는 방법
+// var container = contain({name: "Lemonjon"});
+// container.set({name: "Lemongrab"});
 // 함수 호출의 결과로 만드는 방법
 // : 예측할 수 있는 함수에 의해 값이 변경된다
 //container.update(merge, {name: "Lemongrab"});
@@ -51,7 +51,9 @@ console.log(aNumber);
 console.log(aNumber.update(function(n, x, y, z) { return n / x / y / z }, 1, 2, 3));
 
 // 정상적이지 않은 경우
-console.log(aNumber.update(_.compose(megaCheckedSqr, always(0))));
+// console.log(aNumber.update(_.compose(megaCheckedSqr, always(0)))); // error
+
+
 
 /****************************************************************/
 function cat() {

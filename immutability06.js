@@ -12,7 +12,8 @@ SaferQueue.prototype = {
 };
 
 var q = SaferQueue([1, 2, 3]);
-// console.log(q.enqueue(32)); // TypeError: Cannot call method 'enqueue' of undefined
+console.log(q);
+console.log(q.enqueue(32)); // TypeError: Cannot call method 'enqueue' of undefined
 
 // 생성자 함수를 선호
 function queue() {
@@ -25,7 +26,7 @@ console.log(qq.enqueue(64));
 // invoker를 이용하여 enqueue로 위임할 수 도 있음
 var enqueue = invoker('enqueue', SaferQueue.prototype.enqueue);
 console.log(enqueue(qq, 42));
-// 함수를 이용하여 method call할 때의 flexibility
+// method call이 아닌 함수를 이용할 때의 flexibility
 // - 실제 type이 무엇인지 고려할 필요가 없다.
 // - 상황에 따라 적절한 type으로 반환할 수 있다.
 // - type이나 method가 바뀌면 함수만 변경하면 된다.

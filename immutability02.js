@@ -14,7 +14,7 @@ function summRec(array, seed) {
 	}
 }
 
-//전통적인 함수형 프로그래밍 언어에서는 다음과 같이 구현할 수 없다.
+//함수형 프로그래밍 언어에서는 다음과 같이 구현하지 않는다.
 function summ(array) {
 	var result = 0;
 	var sz = array.length;

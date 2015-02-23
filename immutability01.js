@@ -1,4 +1,4 @@
-//
+// 숲에서 나무가 쓰러질 때 소리가 나는가?
 var _ = require("./node_modules/underscore/underscore");
 
 console.log(skipTake(2, [1, 2, 3, 4]));

@@ -1,4 +1,4 @@
-// 
+// 방어적인 얼리기와 복제
 var _ = require("underscore");
 var a = [1, 2, 3];
 
