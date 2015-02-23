@@ -1,9 +1,6 @@
+// 순수한 부분과 비순수한 부분의 분리
 var _ = require("underscore");
 var rand = partial1(_.random, 1);
-var composedRandomString = partial1(generateString, generateRandomCharacter);
-
-console.log(generateString(generateRandomCharacter, 20));
-console.log(composedRandomString(10));
 
 function generateRandomCharacter() {
 	return rand(26).toString(36);
@@ -12,6 +9,12 @@ function generateRandomCharacter() {
 function generateString(charGen, len) {
 	return repeatedly(len, charGen).join('');
 }
+
+console.log(generateString(generateRandomCharacter, 20));
+
+var composedRandomString = partial1(generateString, generateRandomCharacter);
+
+console.log(composedRandomString(10));
 
 /************************************************/
 function randString(len) {
