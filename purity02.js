@@ -13,6 +13,7 @@ function generateString(charGen, len) {
 	return repeatedly(len, charGen).join('');
 }
 
+/************************************************/
 function randString(len) {
 	var ascii = repeatedly(len, partial1(rand, 26));
 	return _.map(ascii, function(n) {

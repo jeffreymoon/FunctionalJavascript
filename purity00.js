@@ -8,7 +8,7 @@ console.log(randString(0));
 console.log(randString(1));
 console.log(randString(10));
 
-
+/****************************************************************/
 function randString(len) {
 	var ascii = repeatedly(len, partial1(rand, 26));
 	return _.map(ascii, function(n) {
