@@ -14,7 +14,7 @@ console.log(nth(a, 1));
 console.log(_.isEqual(a, ['a', 'b', 'c']));
 
 console.log(nth([{a: 1}, {b: 2}], 0));
-console.log(nth([function() { console.log('blah') }], 0));
+nth([function() { console.log('blah') }], 0);
 
 // 인자를 변형시키지 않고 외부의 값에 의존하지 않는 순수한 함수를 정의
 function second(a) {
